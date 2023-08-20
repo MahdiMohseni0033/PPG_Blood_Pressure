@@ -1,15 +1,15 @@
 
 dataset :
-  train_path : /media/mmohseni/ubuntu/projects/BP_custom/train/train_data.mat
-  valid_path : /media/mmohseni/ubuntu/projects/BP_custom/train/valid_data.mat
-  test_path : /media/mmohseni/ubuntu/projects/BP_custom/train/test_data.mat
+  train_path : /media/mmohseni/ubuntu/Datasets/BP_AllData/UCI_ourPreprocessed/signal_fold_2.mat
+  valid_path : /media/mmohseni/ubuntu/Datasets/BP_AllData/UCI_ourPreprocessed/signal_fold_0.mat
+  test_path : /media/mmohseni/ubuntu/Datasets/BP_AllData/UCI_ourPreprocessed/signal_fold_1.mat
 # /media/mmohseni/ubuntu/Datasets/BP_AllData/UCI_ourPreprocessed/
 # /media/mmohseni/ubuntu/projects/bp-benchmark/datasets/org_to_splitted/uci2_dataset/
 train :
   result : result
   device : cuda
   learning_rate : 0.001
-  batch_size : 256
+  batch_size : 4096
   num_epoch : 1000
   do_val : 2
   cosine_annealing_T : 400

@@ -40,11 +40,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Model Inference")
 
     parser.add_argument("--model", type=str,
-                        default="/media/mmohseni/ubuntu/projects/BP_custom/train/result/2023_08_19__20_27_34/best_checkpoint.pth",
+                        default="/media/mmohseni/ubuntu/projects/BP_custom/train/result/2023_08_20__13_04_06/best_checkpoint.pth",
                         help="Path to the model file (default: model.pth)")
 
     parser.add_argument("--input", type=str,
-                        default=r"test_data.mat",
+                        default=r"/media/mmohseni/ubuntu/projects/BP_custom/train/train_data.mat",
                         help="Path to the input data file (signal_fold_0.mat)")
 
     args = parser.parse_args()
@@ -70,13 +70,13 @@ if __name__ == "__main__":
             Error = abs(test_target - test_output)[0][1].item()
             # print(Error)
 
-            if Error < 5:
+            if Error <= 5:
                 t_5 += 1
 
-            if Error < 10:
+            if Error <= 10:
                 t_10 += 1
 
-            if Error < 15:
+            if Error <= 15:
                 t_15 += 1
 
         print(f'{t_5 / len(test_data)} , {t_10 / len(test_data)} , {t_15 / len(test_data)}')
